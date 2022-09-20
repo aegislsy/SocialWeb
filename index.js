@@ -1,6 +1,10 @@
 // SIDBAR
 const menuItems = document.querySelectorAll(".menu-item");
 
+//MESSAGES
+const messagesNotification = document.querySelector("#messages-notification");
+const messages = document.querySelector(".messages");
+
 // remove active class from all menu items
 const changeActiveItem = () => {
   menuItems.forEach((item) => {
@@ -23,6 +27,12 @@ menuItems.forEach((item) => {
   });
 });
 
-/* =================== MESSAGE ===================== */
-
-
+/* =================== MESSAGES ===================== */
+messagesNotification.addEventListener("click", () => {
+  messages.style.boxShadow = "0 0 1rem var(--color-primary";
+  messagesNotification.querySelector(".notification-count").style.display =
+    "none";
+  setTimeout(() => {
+    messages.style.boxShadow = "none";
+  }, 2000);
+});
